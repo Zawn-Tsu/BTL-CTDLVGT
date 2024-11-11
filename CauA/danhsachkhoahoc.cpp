@@ -169,16 +169,26 @@ public:
     }
     void xoakhoahoc(const string &makh)
     {
+        int check = 0;
         for (auto it = kh.begin(); it != kh.end();)
         {
             if (it->getmkh() == makh)
             {
                 it = kh.erase(it);
+                check = 1;
             }
             else
             {
                 ++it;
             }
+        }
+        if (check == 0)
+        {
+            cout << " khong tim thay khoa hoc" << endl;
+        }
+        else
+        {
+            cout << "khoa hoc da duoc xoa thanh cong" << endl;
         }
     }
     void xxkhtheotc()

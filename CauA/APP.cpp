@@ -16,9 +16,10 @@ public:
         cout << "4. xap xep khoa hoc \n";
         cout << "5. doc cac khoa hoc tu tep\n";
         cout << "6. hien thi cac khoa hoc\n";
-        cout << "7. xoa danh sach\n";
-        cout << "8. hien thi menu\n";
-        cout << "9. thoat\n";
+        cout << "7. xoa khoa hoc\n";
+        cout << "8. xoa danh sach\n";
+        cout << "9. hien thi menu\n";
+        cout << "10. thoat\n";
         cout << "================================================================\n";
     }
     void runapp(dskhoahoc &dskh)
@@ -42,6 +43,7 @@ public:
                 {
                     dskh.themkhoahoc();
                 }
+                cout << endl;
                 break;
             case 2:
             {
@@ -53,6 +55,7 @@ public:
                 check = dskh.timkhoahoctheoma(makh);
                 if (check == 1)
                 {
+                    cout << endl;
                     break;
                 }
                 cout << "Nhap so tin chi moi(-1 neu giu nguyen so tin chi cu): ";
@@ -63,6 +66,7 @@ public:
                 cout << "Nhap giang vien phu trach moi(0 neu giu nguyen giang vien phu trach cu): ";
                 getline(cin, gvptm);
                 dskh.suakhoahoc(makh, stcm, ssvm, gvptm);
+                cout << endl;
                 break;
             }
             case 3:
@@ -85,31 +89,40 @@ public:
                         cout << "Nhap ten khoa hoc can tim: ";
                         getline(cin, tenkh);
                         dskh.timkhoahoctheoten(tenkh);
+                        cout << endl;
                         break;
                     case 2:
                         cout << "Nhap ma khoa hoc can tim: ";
                         getline(cin, makh);
                         dskh.timkhoahoctheoma(makh);
+                        cout << endl;
                         break;
                     case 3:
                         dskh.timmax();
+                        cout << endl;
                         break;
                     case 4:
                         dskh.timmaxsv();
+                        cout << endl;
                         break;
                     case 5:
                         dskh.timmin();
+                        cout << endl;
                         break;
                     case 6:
                         dskh.timminsv();
+                        cout << endl;
                         break;
                     case 7:
+                        cout << endl;
                         break;
                     default:
                         cout << "lua chon khong hop le! vui long chon lai.\n";
+                        cout << endl;
                         break;
                     }
                 } while (luachoncase3 != 7);
+                cout << endl;
                 break;
             case 4:
                 do
@@ -128,29 +141,35 @@ public:
                     case 1:
                         dskh.xxkhtheotc();
                         cout << "xap xep thanh cong\n";
+                        cout << endl;
                         break;
                     case 2:
                         dskh.xxkhtheoten();
                         cout << "xap xep thanh cong\n";
+                        cout << endl;
                         break;
                     case 3:
                         dskh.xxkhtheossv();
                         cout << "xap xep thanh cong\n";
+                        cout << endl;
                         break;
                     case 4:
+                        cout << endl;
                         break;
                     default:
                         cout << "lua chon khong hop le! vui long chon lai.\n";
+                        cout << endl;
                         break;
                     }
                 } while (luachoncase4 != 4);
-
+                cout << endl;
                 break;
             case 5:
                 char tenfile[50];
                 cout << "nhap ten file: ";
                 cin >> tenfile;
                 dskh.docfile(tenfile);
+                cout<<endl;
                 break;
             case 6:
                 if (dskh.isempty())
@@ -170,23 +189,34 @@ public:
 
                     cout << dskh;
                 }
+                cout<<endl;
                 break;
             case 7:
-                dskh.xoads();
+                cout << "nhap ma khoa hoc ban muon xoa: ";
+                cin >> makh;
+                dskh.xoakhoahoc(makh);
+                cout<<endl;
                 break;
             case 8:
-                APP::showmenu();
+                dskh.xoads();
+                cout<<endl;
                 break;
             case 9:
+                APP::showmenu();
+                cout<<endl;
+                break;
+            case 10:
                 cout << "thoat thanh cong\n";
+                cout<<endl;
                 break;
             default:
                 cout << "lua chon khong hop le! vui long chon lai.\n";
+                cout<<endl;
                 break;
             }
         }
 
-        while (luachon != 9);
+        while (luachon != 10);
     }
 };
 
