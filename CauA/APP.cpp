@@ -32,13 +32,14 @@ public:
         do
         {
 
-            cout << "chon 1 chuc nang: ";
+            cout << "chon 1 chuc nang (9 de hien menu): ";
             cin >> luachon;
             switch (luachon)
             {
             case 1:
                 cout << "nhap so luong khoa hoc can them: ";
                 cin >> soluong;
+                cin.ignore();
                 for (int i = 0; i < soluong; i++)
                 {
                     dskh.themkhoahoc();
@@ -114,7 +115,6 @@ public:
                         cout << endl;
                         break;
                     case 7:
-                        cout << endl;
                         break;
                     default:
                         cout << "lua chon khong hop le! vui long chon lai.\n";
@@ -128,9 +128,9 @@ public:
                 do
                 {
 
-                    cout << "-xap xep khoa hoc-\n";
+                    cout << "=== xap xep khoa hoc ===\n";
                     cout << "1.xap xep khoa hoc theo so tin chi\n";
-                    cout << "2.xap xep khoa hoc theo ten\n";
+                    cout << "2.xap xep khoa hoc theo ma hkoa hoc\n";
                     cout << "3.xap xep khoa hoc theo so sinh vien\n";
                     cout << "4.quay lai\n";
                     cout << "chon 1 chuc nang: ";
@@ -169,7 +169,7 @@ public:
                 cout << "nhap ten file: ";
                 cin >> tenfile;
                 dskh.docfile(tenfile);
-                cout<<endl;
+                cout << endl;
                 break;
             case 6:
                 if (dskh.isempty())
@@ -189,29 +189,29 @@ public:
 
                     cout << dskh;
                 }
-                cout<<endl;
+                cout << endl;
                 break;
             case 7:
                 cout << "nhap ma khoa hoc ban muon xoa: ";
                 cin >> makh;
                 dskh.xoakhoahoc(makh);
-                cout<<endl;
+                cout << endl;
                 break;
             case 8:
                 dskh.xoads();
-                cout<<endl;
+                cout << endl;
                 break;
             case 9:
                 APP::showmenu();
-                cout<<endl;
+                cout << endl;
                 break;
             case 10:
                 cout << "thoat thanh cong\n";
-                cout<<endl;
+                cout << endl;
                 break;
             default:
                 cout << "lua chon khong hop le! vui long chon lai.\n";
-                cout<<endl;
+                cout << endl;
                 break;
             }
         }

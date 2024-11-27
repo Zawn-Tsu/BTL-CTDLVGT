@@ -36,7 +36,6 @@ public:
     {
 
         cout << "nhap ma khoa hoc: ";
-        cin.ignore();
         getline(is, k.mkh);
         cout << "nhap ten khoa hoc: ";
         getline(is, k.ten);
